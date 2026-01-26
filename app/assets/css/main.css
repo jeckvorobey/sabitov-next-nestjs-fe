@@ -60,4 +60,35 @@
   .text-gradient {
     @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-teal-400;
   }
+
+  /* Градиент текста от оранжево-красного к белому (по Figma) */
+  .text-gradient-mars {
+    background: linear-gradient(270deg, #FF3F04 0%, #FFFFFF 90%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+
+/* Скошенные ромбы для benefits (по Figma) */
+.benefit-rhombus {
+  width: 185px;
+  height: 185px;
+  clip-path: polygon(15% 0%, 100% 0%, 85% 100%, 0% 100%);
+  background: rgba(255, 255, 255, 0.02);
+  position: relative;
+}
+
+.benefit-rhombus::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  clip-path: polygon(15% 0%, 100% 0%, 85% 100%, 0% 100%);
+  padding: 1px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.02) 100%);
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
 }

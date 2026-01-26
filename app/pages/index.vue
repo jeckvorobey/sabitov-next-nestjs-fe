@@ -12,80 +12,62 @@ useHead({
 </script>
 
 <template>
-  <div class="min-h-screen relative overflow-hidden bg-space-dark">
-    <!-- Background Image -->
+  <div class="h-screen relative overflow-hidden bg-space-dark">
+    <!-- Background Image (по Figma - 1920x660) -->
     <div class="absolute inset-0 z-0">
-      <img src="~/assets/images/background.png" alt="Space Background" class="w-full h-full object-cover opacity-80" />
-      <div class="absolute inset-0 bg-gradient-space opacity-60 mix-blend-overlay"></div>
+      <img
+        src="~/assets/images/background.png"
+        alt="Space Background"
+        class="w-full h-full object-cover"
+      />
     </div>
 
     <!-- Content Wrapper -->
-    <div class="relative z-10 flex flex-col min-h-screen">
+    <div class="relative z-10 h-full flex flex-col">
       <!-- Navigation -->
       <NavBar />
 
-      <!-- Hero Section -->
-      <main class="flex-grow container mx-auto px-4 flex flex-col justify-center relative">
-        
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          
-          <!-- Text Content -->
-          <div class="space-y-8 relative z-20">
-            <!-- Logo area if needed, or just text -->
-            <div class="text-gradient font-bold tracking-wider uppercase mb-4">
-              Путешествие на красную планету
-            </div>
-            
-            <h1 class="hero-title text-white">
-              <span class="text-gradient block mb-2">Начните</span>
-              <span class="block text-white">невероятное</span>
-              <span class="block text-white">путешествие</span>
+      <!-- Main Content Area -->
+      <main class="flex-grow relative">
+        <!-- Заголовок слева (по Figma) -->
+        <div class="absolute left-[calc(50%-580px)] top-1/2 -translate-y-1/2 z-20">
+          <div class="space-y-0">
+            <!-- "Путешествие" - 41px -->
+            <h1 class="text-gradient-mars text-[41px] font-normal leading-tight">
+              Путешествие
             </h1>
-            
-            <p class="text-gray-300 text-lg max-w-md leading-relaxed">
-              Мы здесь для того, чтобы сделать жизнь мультипланетной.
+            <!-- "на красную планету" - 24px -->
+            <p class="text-gradient-mars text-[24px] font-normal leading-tight">
+              на красную планету
             </p>
-
-            <!-- CTA Button -->
-            <button class="btn-space mt-8 group">
-              <span class="relative z-10 group-hover:text-blue-200 transition-colors">
-                Начать путешествие
-              </span>
-              <!-- Glow effect -->
-              <div class="absolute inset-0 bg-blue-500/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            </button>
-          </div>
-
-          <!-- Hero Image (Astronaut/Rocket) -->
-          <div class="relative flex justify-center lg:justify-end items-center">
-             <!-- Planet Background Element -->
-             <img 
-              src="/images/icon_planet.svg" 
-              alt="" 
-              class="absolute top-0 right-0 w-96 h-96 opacity-50 animate-pulse" 
-              style="animation-duration: 4s;"
-            />
-            
-            <!-- Astronaut/Rocket -->
-            <img 
-              src="/images/astronaut.png" 
-              alt="Astronaut" 
-              class="relative z-10 w-full max-w-lg object-contain drop-shadow-[0_0_35px_rgba(35,89,156,0.4)] transform hover:scale-105 transition-transform duration-700" 
-            />
           </div>
         </div>
 
-        <!-- Benefits Section -->
+        <!-- Benefits Section справа (по Figma) -->
         <BenefitsSection />
-        
+
+        <!-- Логотип SpaceX внизу слева (по Figma) -->
+        <div class="absolute left-[calc(50%-580px)] bottom-16 z-20">
+          <div class="flex items-center gap-3">
+            <img
+              src="/images/rocket.svg"
+              alt="SpaceX"
+              class="w-8 h-10"
+            />
+            <span class="text-white text-2xl font-light tracking-widest uppercase">SpaceX</span>
+          </div>
+        </div>
       </main>
     </div>
   </div>
 </template>
 
 <style scoped>
-/* Gradient Text Overlay implementation if simpler utility not enough */
-.hero-title span {
+/* Градиент текста от оранжево-красного к белому (по Figma) */
+.text-gradient-mars {
+  background: linear-gradient(270deg, #FF3F04 0%, #FFFFFF 90%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 </style>

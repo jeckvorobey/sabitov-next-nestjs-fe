@@ -1,38 +1,86 @@
 <script setup lang="ts">
-const { getBenefits } = useApi()
-const benefits = await getBenefits()
+// Данные по Figma макету
+const benefits = [
+  {
+    id: 1,
+    topText: 'мы',
+    mainValue: '1',
+    bottomText: 'на рынке',
+    hasImage: true
+  },
+  {
+    id: 2,
+    topText: 'гарантируем',
+    mainValue: '50%',
+    bottomText: 'безопасность',
+    hasImage: false
+  },
+  {
+    id: 3,
+    topText: 'календарик за',
+    mainValue: '2001г.',
+    bottomText: 'в подарок',
+    hasImage: false
+  },
+  {
+    id: 4,
+    topText: 'путешествие',
+    mainValue: '597',
+    bottomText: 'дней',
+    hasImage: false
+  },
+]
 </script>
 
 <template>
-  <section class="container py-24 relative z-10">
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      <BenefitCard
-        v-for="(benefit, index) in benefits"
+  <!-- Секция benefits справа (по Figma) -->
+  <section class="absolute right-[calc(50%-580px)] top-1/2 -translate-y-1/2 z-10">
+    <div class="grid grid-cols-2 gap-2">
+      <div
+        v-for="benefit in benefits"
         :key="benefit.id"
-        :title="benefit.title"
-        :description="benefit.description"
-        :icon="benefit.icon"
-        class="h-full"
-      />
-      
-      <!-- Fallback if no API data (Design consistency) -->
-      <template v-if="benefits.length === 0">
-        <BenefitCard
-          title="Путешествие"
-          description="Путешествие на красную планету - это незабываемое приключение."
-          icon="benefit_icon_1.svg"
+        class="benefit-rhombus flex flex-col items-center justify-center text-center relative overflow-hidden"
+      >
+        <!-- Фоновое изображение для первого блока -->
+        <img
+          v-if="benefit.hasImage"
+          src="~/assets/images/benefits_bg.png"
+          alt=""
+          class="absolute inset-0 w-full h-full object-cover opacity-65"
         />
-        <BenefitCard
-          title="Безопасность"
-          description="Мы гарантируем полную безопасность на протяжении всего полета."
-          icon="benefit_icon_2.svg"
-        />
-        <BenefitCard
-          title="Технологии"
-          description="Используем только самые передовые технологии для вашего комфорта."
-          icon="benefit_icon_3.svg"
-        />
-      </template>
+
+        <div class="relative z-10 text-white">
+          <span class="text-xs block opacity-80">{{ benefit.topText }}</span>
+          <span class="text-2xl font-normal block my-1">{{ benefit.mainValue }}</span>
+          <span class="text-xs block opacity-80">{{ benefit.bottomText }}</span>
+        </div>
+      </div>
     </div>
+
   </section>
 </template>
+
+<style scoped>
+.benefit-rhombus {
+  width: 185px;
+  height: 185px;
+  clip-path: polygon(15% 0%, 100% 0%, 85% 100%, 0% 100%);
+  background: rgba(255, 255, 255, 0.006);
+  position: relative;
+}
+
+.benefit-rhombus::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  padding: 1px;
+  clip-path: polygon(15% 0%, 100% 0%, 85% 100%, 0% 100%);
+  background: linear-gradient(180deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.02) 100%);
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+</style>
