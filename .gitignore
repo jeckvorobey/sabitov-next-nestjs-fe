@@ -12,13 +12,34 @@ node_modules
 # Logs
 logs
 *.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
 
 # Misc
 .DS_Store
 .fleet
 .idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+*.local
 
 # Local env files
 .env
 .env.*
 !.env.example
+
+# OS
+Thumbs.db
+Desktop.ini
+
+# Test coverage
+coverage
+*.lcov
+.nyc_output
