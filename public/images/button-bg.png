@@ -1,0 +1,27 @@
+<svg preserveAspectRatio="none" width="100%" height="100%" overflow="visible" style="display: block;" viewBox="0 0 185 39" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="&#208;&#159;&#209;&#128;&#209;&#143;&#208;&#188;&#208;&#190;&#209;&#131;&#208;&#179;&#208;&#190;&#208;&#187;&#209;&#140;&#208;&#189;&#208;&#184;&#208;&#186; 3 &#208;&#186;&#208;&#190;&#208;&#191;&#208;&#184;&#209;&#143; 4">
+<mask id="mask0_0_20" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="3" y="2" width="180" height="35">
+<path id="&#208;&#159;&#209;&#128;&#209;&#143;&#208;&#188;&#208;&#190;&#209;&#131;&#208;&#179;&#208;&#190;&#208;&#187;&#209;&#140;&#208;&#189;&#208;&#184;&#208;&#186; 3 &#208;&#186;&#208;&#190;&#208;&#191;&#208;&#184;&#209;&#143; 4_2" d="M182.5 2.5V36.5H3.5V2.5H182.5Z" fill="var(--fill-0, black)" fill-opacity="0.501961" stroke="url(#paint0_linear_0_20)" stroke-miterlimit="16"/>
+</mask>
+<g mask="url(#mask0_0_20)">
+<g id="&#208;&#159;&#209;&#128;&#209;&#143;&#208;&#188;&#208;&#190;&#209;&#131;&#208;&#179;&#208;&#190;&#208;&#187;&#209;&#140;&#208;&#189;&#208;&#184;&#208;&#186; 3 &#208;&#186;&#208;&#190;&#208;&#191;&#208;&#184;&#209;&#143; 4_3">
+<rect width="185" height="39" fill="#16151D" fill-opacity="0.501961"/>
+</g>
+<path id="Stroke" d="M182.5 2.5V36.5H3.5V2.5H182.5Z" stroke="url(#paint1_linear_0_20)" stroke-miterlimit="16"/>
+</g>
+</g>
+<defs>
+<linearGradient id="paint0_linear_0_20" x1="107.079" y1="2.21545" x2="105.989" y2="37.6182" gradientUnits="userSpaceOnUse">
+<stop stop-color="#263E66"/>
+<stop offset="0.362549" stop-color="#09213D"/>
+<stop offset="0.633301" stop-color="#111F2D"/>
+<stop offset="1" stop-color="#23599C"/>
+</linearGradient>
+<linearGradient id="paint1_linear_0_20" x1="107.079" y1="2.21545" x2="105.989" y2="37.6182" gradientUnits="userSpaceOnUse">
+<stop stop-color="#263E66"/>
+<stop offset="0.362549" stop-color="#09213D"/>
+<stop offset="0.633301" stop-color="#111F2D"/>
+<stop offset="1" stop-color="#23599C"/>
+</linearGradient>
+</defs>
+</svg>
