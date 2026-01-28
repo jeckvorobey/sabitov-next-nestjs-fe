@@ -26,15 +26,9 @@
       <div class="absolute left-[300px] top-[550px] flex items-center">
         <!-- Button Container -->
         <div class="relative">
-          <button class="relative w-[180px] h-[40px] bg-transparent border border-white/20 group hover:border-white/40 transition-colors duration-300 flex items-center justify-center cursor-pointer overflow-visible">
-            <!-- Угловые элементы как в логотипе -->
-            <img src="/images/corner-tl.png" class="absolute -top-[1px] -left-[1px]" alt="" />
-            <img src="/images/corner-tr.png" class="absolute -top-[1px] -right-[1px]" alt="" />
-            <img src="/images/corner-bl.png" class="absolute -bottom-[1px] -left-[1px]" alt="" />
-            <img src="/images/corner-br.png" class="absolute -bottom-[1px] -right-[1px]" alt="" />
-
+          <button class="btn-spacex relative w-[180px] h-[40px] flex items-center justify-center cursor-pointer group overflow-visible">
             <!-- Text -->
-            <span class="text-white text-[12px] uppercase tracking-widest pt-[2px]">
+            <span class="text-white text-[12px] uppercase tracking-widest pt-[2px] z-10 transition-colors duration-300 group-hover:text-white/80">
               Начать путешествие
             </span>
           </button>
@@ -124,3 +118,38 @@ import { ref } from 'vue'
 
 const hoveredCard = ref<number | null>(null)
 </script>
+
+<style scoped>
+.btn-spacex::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  background: 
+    linear-gradient(90deg, #ffffff, #f97316) top left / 100% 1px no-repeat,
+    linear-gradient(180deg, #ffffff, #f97316) top left / 1px 100% no-repeat;
+  transition: all 0.3s ease;
+}
+
+.btn-spacex::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 10px;
+  height: 10px;
+  background: 
+    linear-gradient(270deg, #ffffff, #ea580c) bottom right / 100% 1px no-repeat,
+    linear-gradient(0deg, #ffffff, #ea580c) bottom right / 1px 100% no-repeat;
+  transition: all 0.3s ease;
+}
+
+.group:hover .btn-spacex::before,
+.group:hover .btn-spacex::after {
+  width: 20px;
+  height: 20px;
+  filter: brightness(1.2);
+}
+</style>
